@@ -106,7 +106,7 @@ async def bot_start(event):
             start_msg = f"Hey! 👤{mention},\
                         \nI am {my_mention}'s assistant bot.\
                         \nYou can contact to my master from here.\
-                        \n\nPowered by [Lionuserbot](https://t.me/Lion-Z)"
+                        \n\nPowered by [Lionuserbot](https://t.me/LionXupdates)"
         buttons = [
             (
                 Button.url("Repo", "https://github.com/MdNoor786/Lion-Z"),
