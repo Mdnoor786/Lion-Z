@@ -65,7 +65,7 @@ async def startupmessage():
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/4e3ba8e8f7e535d5a2abe.jpg",
                 caption="**Your LionUserbot has been started successfully.**",
-                buttons=[(Button.url("Support", "https://t.me/Lion-Z"),)],
+                buttons=[(Button.url("Support", "https://t.me/LionXupdates"),)],
             )
     except Exception as e:
         LOGS.error(e)
