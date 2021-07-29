@@ -34,7 +34,7 @@ heroku_api = "https://api.heroku.com"
 UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
 
 REPO_REMOTE_NAME = "temponame"
-IFFUCI_ACTIVE_BRANCH_NAME = "master"
+IFFUCI_ACTIVE_BRANCH_NAME = "main
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/master"
 RESTARTING_APP = "re-starting heroku application"
@@ -169,7 +169,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             event, "`Build failed!\n" "Cancelled or there were some errors...`"
         )
     try:
-        remote.push("master:main", force=True)
+        remote.push("main:main", force=True)
     except Exception as error:
         await event.edit(f"{txt}\n**Here is the error log:**\n`{error}`")
         return repo.__del__()
@@ -232,7 +232,7 @@ async def upstream(event):
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
         force_update = True
-        repo.create_head("master", origin.refs.master)
+        repo.create_head("main", origin.refs.master)
         repo.heads.master.set_tracking_branch(origin.refs.master)
         repo.heads.master.checkout(True)
     ac_br = repo.active_branch.name
@@ -312,11 +312,11 @@ async def upstream(event):
 
 
 @lionub.lion_cmd(
-    pattern="badcat$",
-    command=("badcat", plugin_category),
+    pattern="lionx$",
+    command=("lionx, plugin_category),
     info={
         "header": "To update to badcat( for extra masala and gali).",
-        "usage": "{tr}badcat",
+        "usage": "{tr}lionx",
     },
 )
 async def variable(var):
