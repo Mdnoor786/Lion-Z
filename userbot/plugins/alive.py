@@ -39,8 +39,8 @@ async def amireallyalive(event):
     reply_to_id = await reply_id(event)
     uptime = await get_readable_time((time.time() - StartTime))
     _, check_sgnirts = check_data_base_heal_th()
-    EMOJI = gvarstatus("ALIVE_EMOJI") or "  ✥ "
-    CUSTOM_ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "✮ MY BOT IS RUNNING SUCCESSFULLY ✮"
+    EMOJI = gvarstatus("ALIVE_EMOJI") or "  ✨ "
+    CUSTOM_ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "✮ HI MASTER I AM ALIVE LION-Z... ✮"
     LION_IMG = gvarstatus("ALIVE_PIC")
     if LION_IMG:
         LION = [x for x in LION_IMG.split()]
@@ -67,12 +67,12 @@ async def amireallyalive(event):
         await edit_or_reply(
             event,
             f"**{CUSTOM_ALIVE_TEXT}**\n\n"
+            f"**{EMOJI} Owner:** {mention}\n"
+            f"**{EMOJI} Lion-Z :** `{lionversion}`\n"
             f"**{EMOJI} Database :** `{check_sgnirts}`\n"
-            f"**{EMOJI} Telethon Version :** `{version.__version__}\n`"
-            f"**{EMOJI} Lion-Z Version :** `{lionversion}`\n"
-            f"**{EMOJI} Python Version :** `{python_version()}\n`"
-            f"**{EMOJI} Uptime :** `{uptime}\n`"
-            f"**{EMOJI} Master:** {mention}\n",
+            f"**{EMOJI} Telethon :** `{version.__version__}\n`"
+            f"**{EMOJI} Python :** `{python_version()}\n`"
+            f"**{EMOJI} Uptime :** `{uptime}\n`",
         )
 
 
@@ -90,12 +90,12 @@ async def amireallyalive(event):
 async def amireallyalive(event):
     "A kind of showing bot details by your inline bot"
     reply_to_id = await reply_id(event)
-    EMOJI = gvarstatus("ALIVE_EMOJI") or "  ✥ "
+    EMOJI = gvarstatus("ALIVE_EMOJI") or "  ♦️ "
     lion_caption = f"**Lion-Z is Up and Running**\n"
-    lion_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
-    lion_caption += f"**{EMOJI} Lion-Z Version :** `{lionversion}`\n"
-    lion_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
-    lion_caption += f"**{EMOJI} Master:** {mention}\n"
+    lion_caption += f"**{EMOJI} Telethon :** `{version.__version__}\n`"
+    lion_caption += f"**{EMOJI} Lion-Z :** `{lionversion}`\n"
+    lion_caption += f"**{EMOJI} Python :** `{python_version()}\n`"
+    lion_caption += f"**{EMOJI} Owner:** {mention}\n"
     results = await event.client.inline_query(Config.TG_BOT_USERNAME, lion_caption)
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()
