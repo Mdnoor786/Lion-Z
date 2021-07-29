@@ -315,12 +315,12 @@ async def upstream(event):
     pattern="lionx$",
     command=("lionx, plugin_category),
     info={
-        "header": "To update to badcat( for extra masala and gali).",
+        "header": "To update to lionx( for extra masala and gali).",
         "usage": "{tr}lionx",
     },
 )
 async def variable(var):
-    "To update to badcat( for extra masala and gali)."
+    "To update to lionx( for extra masala and gali)."
     if Config.HEROKU_API_KEY is None:
         return await edit_delete(
             var,
