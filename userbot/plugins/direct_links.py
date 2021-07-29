@@ -10,8 +10,8 @@ from humanize import naturalsize
 
 from userbot import lionub
 
-from ..core.logger import logging
-from ..core.managers import edit_or_reply
+from ..funcs.logger import logging
+from ..funcs.managers import edit_or_reply
 
 LOGS = logging.getLogger(__name__)
 plugin_category = "misc"

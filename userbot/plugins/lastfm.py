@@ -17,7 +17,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from userbot import lionub
 
 from ..Config import Config
-from ..core.logger import logging
+from ..funcs.logger import logging
 from . import BOTLOG, BOTLOG_CHATID, DEFAULT_BIO
 
 LOGS = logging.getLogger(__name__)

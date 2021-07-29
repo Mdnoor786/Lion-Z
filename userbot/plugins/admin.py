@@ -22,8 +22,8 @@ from telethon.tl.types import (
 
 from userbot import lionub
 
-from ..core.logger import logging
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.logger import logging
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers import media_type
 from ..helpers.utils import _format, get_user_from_event
 from ..sql_helper.mute_sql import is_muted, mute, unmute

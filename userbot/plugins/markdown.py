@@ -20,7 +20,7 @@ from telethon.tl.types import (
 from telethon.utils import add_surrogate, del_surrogate
 
 from userbot import lionub
-from userbot.core.logger import logging
+from userbot.funcs.logger import logging
 
 LOGS = logging.getLogger(__name__)
 

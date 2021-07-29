@@ -9,7 +9,7 @@ from telethon.utils import get_display_name
 
 from userbot import lionub
 
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _format
 from ..sql_helper import gban_sql_helper as gban_sql
 from ..sql_helper.mute_sql import is_muted, mute, unmute

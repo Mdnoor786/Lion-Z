@@ -2,7 +2,7 @@ from telethon.tl import functions
 
 from .. import lionub
 from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..utils.tools import create_supergroup
 
 plugin_category = "tools"

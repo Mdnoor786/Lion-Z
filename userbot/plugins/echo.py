@@ -5,7 +5,7 @@ Idea by @BlazingRobonix
 
 from userbot import lionub
 
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..sql_helper.echo_sql import (
     addecho,
     get_all_echos,

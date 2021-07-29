@@ -2,7 +2,7 @@ import asyncio
 
 from userbot import lionub
 
-from ..core.managers import edit_or_reply
+from ..funcs.managers import edit_or_reply
 
 plugin_category = "fun"
 

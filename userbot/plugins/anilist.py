@@ -11,7 +11,7 @@ from telegraph import exceptions, upload_file
 
 from userbot import lionub
 
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers import media_type, readable_time, time_formatter
 from ..helpers.functions import (
     airing_query,

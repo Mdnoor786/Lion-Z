@@ -3,10 +3,10 @@ from datetime import datetime
 from telethon.utils import get_display_name
 
 from userbot import lionub
-from userbot.core.logger import logging
+from userbot.funcs.logger import logging
 
-from ..core.data import blacklist_chats_list
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.data import blacklist_chats_list
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..sql_helper import global_collectionjson as sql
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 

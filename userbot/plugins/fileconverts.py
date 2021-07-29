@@ -21,7 +21,7 @@ from telethon.utils import get_attributes
 from userbot import lionub
 
 from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers import media_type, progress, thumb_from_audio
 from ..helpers.functions import (
     convert_toimage,

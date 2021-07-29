@@ -11,9 +11,9 @@ from validators.url import url
 
 from .. import *
 from ..Config import Config
-from ..core.logger import logging
-from ..core.managers import edit_delete, edit_or_reply
-from ..core.session import lionub
+from ..funcs.logger import logging
+from ..funcs.managers import edit_delete, edit_or_reply
+from ..funcs.session import lionub
 from ..helpers import *
 from ..helpers.utils import _liontools, _lionutils, _format, install_pip, reply_id
 

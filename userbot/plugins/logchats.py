@@ -2,10 +2,10 @@
 import asyncio
 
 from userbot import lionub
-from userbot.core.logger import logging
+from userbot.funcs.logger import logging
 
 from ..Config import Config
-from ..core.managers import edit_delete
+from ..funcs.managers import edit_delete
 from ..helpers.tools import media_type
 from ..helpers.utils import _format
 from ..sql_helper import no_log_pms_sql

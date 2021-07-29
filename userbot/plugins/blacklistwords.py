@@ -4,7 +4,7 @@ from telethon.utils import get_display_name
 
 from userbot import lionub
 
-from ..core.managers import edit_or_reply
+from ..funcs.managers import edit_or_reply
 from ..sql_helper import blacklist_sql as sql
 from ..utils import is_admin
 

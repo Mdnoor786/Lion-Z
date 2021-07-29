@@ -9,12 +9,12 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 from search_engine_parser import BingSearch, GoogleSearch, YahooSearch
-from search_engine_parser.core.exceptions import NoResultsOrTrafficError
+from search_engine_parser.funcs.exceptions import NoResultsOrTrafficError
 
 from userbot import lionub
 
 from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers.functions import deEmojify
 from ..helpers.utils import reply_id
 from . import BOTLOG, BOTLOG_CHATID

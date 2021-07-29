@@ -9,7 +9,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import lionub
 
 from ..Config import Config
-from ..core.managers import edit_or_reply
+from ..funcs.managers import edit_or_reply
 from . import awooify, baguette, convert_toimage, iphonex, lolice
 
 plugin_category = "extra"

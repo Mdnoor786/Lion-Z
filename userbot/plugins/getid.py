@@ -1,9 +1,9 @@
 from telethon.utils import pack_bot_file_id
 
 from userbot import lionub
-from userbot.core.logger import logging
+from userbot.funcs.logger import logging
 
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 
 plugin_category = "utils"
 

@@ -8,7 +8,7 @@ from datetime import datetime
 from userbot import lionub
 
 from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers import _liontools, media_type, progress, reply_id
 
 plugin_category = "utils"

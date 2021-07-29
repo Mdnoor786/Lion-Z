@@ -22,10 +22,10 @@ from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 from telethon import events
 
 from userbot import lionub
-from userbot.core.logger import logging
+from userbot.funcs.logger import logging
 
 from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers import CancelProcess, humanbytes, progress, time_formatter
 from ..helpers.utils import _format
 from ..sql_helper import google_drive_sql as helper

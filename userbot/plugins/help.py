@@ -3,8 +3,8 @@ from telethon import functions
 from userbot import lionub
 
 from ..Config import Config
-from ..core import CMD_INFO, GRP_INFO, PLG_INFO
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs import CMD_INFO, GRP_INFO, PLG_INFO
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers.utils import reply_id
 
 cmdprefix = Config.COMMAND_HAND_LER

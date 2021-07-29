@@ -4,7 +4,7 @@ import asyncio
 
 from userbot import lionub
 
-from ..core.managers import edit_or_reply
+from ..funcs.managers import edit_or_reply
 from ..helpers.utils import _format
 from . import ALIVE_NAME
 

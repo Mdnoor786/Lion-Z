@@ -8,7 +8,7 @@ from pathlib import Path
 from userbot import lionub
 
 from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _lionutils, _format
 from . import humanbytes
 

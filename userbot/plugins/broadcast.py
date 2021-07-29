@@ -4,8 +4,8 @@ from asyncio import sleep
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from .. import lionub
-from ..core.logger import logging
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.logger import logging
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _format, get_user_from_event
 from ..sql_helper import broadcast_sql as sql
 from . import BOTLOG, BOTLOG_CHATID

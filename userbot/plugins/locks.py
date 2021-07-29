@@ -8,7 +8,7 @@ from telethon.tl.types import ChatBannedRights
 
 from userbot import lionub
 
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers.utils import _format
 from ..sql_helper.locks_sql import get_locks, is_locked, update_lock
 from ..utils import is_admin

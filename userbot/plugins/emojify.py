@@ -6,7 +6,7 @@ Userbot plugin for LionZ
 
 from userbot import lionub
 
-from ..core.managers import edit_or_reply
+from ..funcs.managers import edit_or_reply
 from ..helpers import fonts as emojify
 
 plugin_category = "fun"

@@ -7,7 +7,7 @@ from telethon.tl.types import ChatAdminRights
 
 from userbot import lionub
 
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers.utils import get_user_from_event
 from . import ALIVE_NAME
 

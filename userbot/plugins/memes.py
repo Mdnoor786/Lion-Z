@@ -13,7 +13,7 @@ from telethon.tl.types import ChannelParticipantsAdmins, MessageEntityMentionNam
 
 from userbot import lionub
 
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers import lionmemes
 from ..helpers.utils import _lionutils
 from . import BOTLOG, BOTLOG_CHATID, mention

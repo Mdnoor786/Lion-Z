@@ -8,7 +8,7 @@ from subprocess import run as runapp
 from userbot import lionub
 
 from ..Config import Config
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers.tools import media_type
 from . import media_type, progress
 

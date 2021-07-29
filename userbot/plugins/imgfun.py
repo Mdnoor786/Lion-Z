@@ -7,7 +7,7 @@ from PIL import Image, ImageFilter, ImageOps
 
 from userbot import lionub
 
-from ..core.managers import edit_delete, edit_or_reply
+from ..funcs.managers import edit_delete, edit_or_reply
 from ..helpers import media_type
 from ..helpers.functions import dotify
 from ..helpers.utils import _liontools

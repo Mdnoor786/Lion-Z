@@ -10,7 +10,7 @@ from PIL import Image
 
 from userbot import lionub
 
-from ..core.managers import edit_delete
+from ..funcs.managers import edit_delete
 from ..helpers.utils import _liontools, _lionutils, reply_id
 
 plugin_category = "fun"
