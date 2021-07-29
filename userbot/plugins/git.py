@@ -36,7 +36,7 @@ async def source(e):
     await edit_or_reply(
         e,
         "Click [here](https://github.com/MdNoor786/Lion-Z) to open this bot source code\
-        \nClick [here](https://github.com/Mr-confused/nekopack) to open supported link for heroku",
+        \nClick [here](https://github.com/TeamLionX/Lion-Z) to open supported link for heroku",
     )
 
 
@@ -47,7 +47,7 @@ async def source(e):
         "header": "Shows the information about an user on GitHub of given username",
         "flags": {"-l": "repo limit : default to 5"},
         "usage": ".github [flag] [username]",
-        "examples": [".github crazy1709", ".github -l5 crazy1709"],
+        "examples": [".github crazy", ".github -l5 crazy"],
     },
 )
 async def _(event):
@@ -174,7 +174,7 @@ async def git_commit(file_name, mone):
             ccess = Config.GIT_REPO_NAME
             ccess = ccess.strip()
             await mone.edit(
-                f"`Commited On Your Github Repo`\n\n[Your PLUGINS](https://github.com/{ccess}/tree/master/userbot/plugins/)"
+                f"`Commited On Your Github Repo`\n\n[Your PLUGINS](https://github.com/{ccess}/tree/main/userbot/plugins/)"
             )
         except BaseException:
             LOGS.info("Cannot Create Plugin")
