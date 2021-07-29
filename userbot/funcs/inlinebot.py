@@ -58,23 +58,23 @@ def main_menu():
     buttons = [
         (
             Button.inline(
-                f"ℹ️ Info",
+                f"🔻 Info",
                 data="check",
             ),
         ),
         (
             Button.inline(
-                f"☄️ Admin ({len(GRP_INFO['admin'])})",
+                f"🖍️ Admin ({len(GRP_INFO['admin'])})",
                 data=f"admin_menu",
             ),
             Button.inline(
-                f"🌠 Bot ({len(GRP_INFO['bot'])})",
+                f"🕊️ Bot ({len(GRP_INFO['bot'])})",
                 data=f"bot_menu",
             ),
         ),
         (
             Button.inline(
-                f"👻 Fun ({len(GRP_INFO['fun'])})",
+                f"🤪 Fun ({len(GRP_INFO['fun'])})",
                 data=f"fun_menu",
             ),
             Button.inline(
@@ -98,7 +98,7 @@ def main_menu():
                 data=f"extra_menu",
             ),
             Button.inline(
-                f"🔒 Close Menu",
+                f"♦️ Close Menu",
                 data=f"close",
             ),
         ),
@@ -194,28 +194,28 @@ def paginate_help(
                 modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
             ] + [
                 (
-                    Button.inline("⌫", data=f"{prefix}_prev({modulo_page})_plugin"),
-                    Button.inline("⚙️ Main Menu", data="mainmenu"),
-                    Button.inline("⌦", data=f"{prefix}_next({modulo_page})_plugin"),
+                    Button.inline("🔺", data=f"{prefix}_prev({modulo_page})_plugin"),
+                    Button.inline(" ♦️ Menu", data="mainmenu"),
+                    Button.inline("🔻", data=f"{prefix}_next({modulo_page})_plugin"),
                 )
             ]
         else:
-            pairs = pairs + [(Button.inline("⚙️ Main Menu", data="mainmenu"),)]
+            pairs = pairs + [(Button.inline("♦️ Menu", data="mainmenu"),)]
     elif len(pairs) > number_of_rows:
         pairs = pairs[
             modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
         ] + [
             (
                 Button.inline(
-                    "⌫",
+                    "🔺",
                     data=f"{prefix}_prev({modulo_page})_command_{category_plugins}_{category_pgno}",
                 ),
                 Button.inline(
-                    "⬅️ Back ",
+                    "🔙",
                     data=f"back_plugin_{category_plugins}_{category_pgno}",
                 ),
                 Button.inline(
-                    "⌦",
+                    "🔻",
                     data=f"{prefix}_next({modulo_page})_command_{category_plugins}_{category_pgno}",
                 ),
             )
@@ -224,7 +224,7 @@ def paginate_help(
         pairs = pairs + [
             (
                 Button.inline(
-                    "⬅️ Back ",
+                    "🔙",
                     data=f"back_plugin_{category_plugins}_{category_pgno}",
                 ),
             )
@@ -677,10 +677,10 @@ async def on_plug_in_callback_query_handler(event):
     buttons = [
         (
             Button.inline(
-                "⬅️ Back ",
+                "🔙",
                 data=f"back_command_{category}_{pgno}_{category_plugins}_{category_pgno}",
             ),
-            Button.inline("⚙️ Main Menu", data="mainmenu"),
+            Button.inline("♦️ Menu", data="mainmenu"),
         )
     ]
     text = f"**Command :** `{tr}{cmd}`\
