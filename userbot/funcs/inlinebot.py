@@ -685,6 +685,6 @@ async def on_plug_in_callback_query_handler(event):
     ]
     text = f"**Command :** `{tr}{cmd}`\
         \n**Plugin :** `{category}`\
-        \n**Lionegory :** `{category_plugins}`\
+        \n**Category :** `{category_plugins}`\
         \n\n**✘ Intro :**\n{CMD_INFO[cmd][0]}"
     await event.edit(text, buttons=buttons)
