@@ -15,7 +15,7 @@ from .utils import (
     verifyLoggerGroup,
 )
 
-LOGS = logging.getLogger("LionUserbot")
+LOGS = logging.getLogger("Lion-Z")
 
 print(userbot.__copyright__)
 print("Licensed under the terms of the " + userbot.__license__)
@@ -48,7 +48,7 @@ async def startup_process():
     await load_plugins("plugins")
     await load_plugins("assistant")
     print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
-    print("Yay your userbot is officially working.!!!")
+    print("Yay your Lion-Z Userbot is officially working.!!!")
     print(
         f"Congratulation, now type {cmdhr}alive to see message if lionub is live\
         \nIf you need assistance, head to https://t.me/LionXSupport"
