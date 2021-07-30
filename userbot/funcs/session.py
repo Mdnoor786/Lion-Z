@@ -4,7 +4,7 @@ from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 
 from ..Config import Config
-from .client import LionUserBotClient
+from .client import LionZClient
 
 __version__ = "2.10.6"
 
@@ -16,7 +16,7 @@ else:
     session = "Lion-Z"
 
 try:
-    lionub = LionUserBotClient(
+    lionub = LionZClient(
         session=session,
         api_id=Config.APP_ID,
         api_hash=Config.API_HASH,
@@ -31,7 +31,7 @@ except Exception as e:
     sys.exit()
 
 
-lionub.tgbot = tgbot = LionUserBotClient(
+lionub.tgbot = tgbot = LionZClient(
     session="LionZTgbot",
     api_id=Config.APP_ID,
     api_hash=Config.API_HASH,
