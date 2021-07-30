@@ -37,7 +37,7 @@ REGEX_ = REGEX()
 sudo_enabledcmds = sudo_enabled_cmds()
 
 
-class LionUserBotClient(TelegramClient):
+class LionZClient(TelegramClient):
     def lion_cmd(
         self: TelegramClient,
         pattern: str or tuple = None,
@@ -140,7 +140,7 @@ class LionUserBotClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**LionUserbot Error report**\n\n"
+                        text = "**Lion-Z Error report**\n\n"
                         link = "[here](https://t.me/LionXSupport)"
                         text += "If you wanna you can report it"
                         text += f"- just forward this message {link}.\n"
@@ -257,7 +257,7 @@ class LionUserBotClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**LionUserbot Error report**\n\n"
+                        text = "**Lion-Z Error report**\n\n"
                         link = "[here](https://t.me/LionXSupport)"
                         text += "If you wanna you can report it"
                         text += f"- just forward this message {link}.\n"
@@ -296,14 +296,14 @@ class LionUserBotClient(TelegramClient):
         self.running_processes.clear()
 
 
-LionUserBotClient.fast_download_file = download_file
-LionUserBotClient.fast_upload_file = upload_file
-LionUserBotClient.reload = restart_script
-LionUserBotClient.get_msg_link = get_message_link
-LionUserBotClient.check_testcases = checking
+LionZClient.fast_download_file = download_file
+LionZClient.fast_upload_file = upload_file
+LionZClient.reload = restart_script
+LionZClient.get_msg_link = get_message_link
+LionZClient.check_testcases = checking
 try:
     send_message_check = TelegramClient.send_message
 except AttributeError:
-    LionUserBotClient.send_message = send_message
-    LionUserBotClient.send_file = send_file
-    LionUserBotClient.edit_message = edit_message
+    LionZClient.send_message = send_message
+    LionZClient.send_file = send_file
+    LionZClient.edit_message = edit_message
