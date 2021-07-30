@@ -13,7 +13,7 @@ from ..helpers.tools import media_type
 from ..helpers.utils import _liontools, _lionutils, _format, install_pip, reply_id
 from .decorators import admin_cmd, sudo_cmd
 
-LOGS = logging.getLogger("LionUserbot")
+LOGS = logging.getLogger("Lion-Z")
 
 
 def load_module(shortname, plugin_path=None):
