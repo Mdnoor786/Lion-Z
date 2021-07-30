@@ -280,8 +280,8 @@ async def upstream(event):
     pattern="update deploy$",
 )
 async def upstream(event):
-    event = await edit_or_reply(event, "`Pulling the nekopack repo wait a sec ....`")
-    off_repo = "https://github.com/Mr-confused/nekopack"
+    event = await edit_or_reply(event, "`Pulling the Lion-Z repo wait a sec ....`")
+    off_repo = "https://github.com/MdNoor786/Lion-Z"
     os.chdir("/app")
     try:
         txt = "`Oops.. Updater cannot continue due to "
@@ -312,15 +312,15 @@ async def upstream(event):
 
 
 @lionub.lion_cmd(
-    pattern="badcat$",
-    command=("badcat", plugin_category),
+    pattern="lionx$",
+    command=("lionx", plugin_category),
     info={
-        "header": "To update to badcat( for extra masala and gali).",
-        "usage": "{tr}badcat",
+        "header": "To update to lionx( for extra masala and gali).",
+        "usage": "{tr}lionx",
     },
 )
 async def variable(var):
-    "To update to badcat( for extra masala and gali)."
+    "To update to lionx( for extra masala and gali)."
     if Config.HEROKU_API_KEY is None:
         return await edit_delete(
             var,
