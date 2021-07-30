@@ -53,8 +53,8 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"𝐋𝐈𝐎𝐍-𝐙 𝗛𝗲𝗹𝗽𝗲𝗿\
-        \n𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗱 𝗯𝘆 {mention}"
+    text = f"𝑳𝑰𝑶𝑵-𝒁 𝑯𝒆𝒍𝒑𝒆𝒓\
+        \n𝑷𝒓𝒐𝒗𝒊𝒅𝒆𝒅 𝑩𝒚 {mention}"
     buttons = [
         (
             Button.inline(
@@ -64,7 +64,7 @@ def main_menu():
         ),
         (
             Button.inline(
-                f"🖍️ Admin ({len(GRP_INFO['admin'])})",
+                f"🖍️ 𝙰𝚍𝚖𝚒𝚗 ({len(GRP_INFO['admin'])})",
                 data=f"admin_menu",
             ),
             Button.inline(
@@ -74,31 +74,31 @@ def main_menu():
         ),
         (
             Button.inline(
-                f"🤪 Fun ({len(GRP_INFO['fun'])})",
+                f"🤪 𝙵𝚞𝚗 ({len(GRP_INFO['fun'])})",
                 data=f"fun_menu",
             ),
             Button.inline(
-                f"✨ Misc ({len(GRP_INFO['misc'])})",
+                f"✨ 𝙼𝚒𝚜𝚌 ({len(GRP_INFO['misc'])})",
                 data=f"misc_menu",
             ),
         ),
         (
             Button.inline(
-                f"🧨 Tools ({len(GRP_INFO['tools'])})",
+                f"🧨 𝚃𝚘𝚘𝚕𝚜 ({len(GRP_INFO['tools'])})",
                 data=f"tools_menu",
             ),
             Button.inline(
-                f"🗂 Utils ({len(GRP_INFO['utils'])})",
+                f"🗂 𝚄𝚝𝚒𝚕𝚜 ({len(GRP_INFO['utils'])})",
                 data=f"utils_menu",
             ),
         ),
         (
             Button.inline(
-                f"➕ Extra ({len(GRP_INFO['extra'])})",
+                f"➕ 𝙴𝚡𝚝𝚛𝚊 ({len(GRP_INFO['extra'])})",
                 data=f"extra_menu",
             ),
             Button.inline(
-                f"♦️ Close Menu",
+                f"♦️ 𝙲𝚕𝚘𝚜𝚎 𝙼𝚎𝚗𝚞",
                 data=f"close",
             ),
         ),
@@ -518,7 +518,7 @@ async def inline_handler(event):  # sourcery no-metrics
             url=LIONLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝐋𝐈𝐎𝐍-𝐙.", "md"
+            "𝘿𝙚𝙥𝙡𝙤𝙮 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 𝙇𝙄𝙊𝙉-𝙕.", "md"
         )
         result = types.InputBotInlineResult(
             id=str(uuid4()),
@@ -548,9 +548,9 @@ async def on_plug_in_callback_query_handler(event):
 async def on_plugin_callback_query_handler(event):
     text = f"𝙿𝚕𝚞𝚐𝚒𝚗𝚜: {len(PLG_INFO)}\
         \n𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜: {len(CMD_INFO)}\
-        \n\n{tr}𝚑𝚎𝚕𝚙 <𝚙𝚕𝚞𝚐𝚒𝚗> : 𝙵𝚘𝚛 𝚜𝚙𝚎𝚌𝚒𝚏𝚒𝚌 𝚙𝚕𝚞𝚐𝚒𝚗 𝚒𝚗𝚏𝚘.\
-        \n{tr}𝚑𝚎𝚕𝚙 -𝚌 <𝚌𝚘𝚖𝚖𝚊𝚗𝚍> : 𝙵𝚘𝚛 𝚊𝚗𝚢 𝚌𝚘𝚖𝚖𝚊𝚗𝚍 𝚒𝚗𝚏𝚘.\
-        \n{tr}𝚜 <𝚚𝚞𝚎𝚛𝚢> : 𝚃𝚘 𝚜𝚎𝚊𝚛𝚌𝚑 𝚊𝚗𝚢 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜.\
+        \n\n{tr}𝒉𝑒𝑙𝑝 <𝑝𝑙𝑢𝑔𝑖𝑛> : 𝐹𝑜𝑟 𝑠𝑝𝑒𝑐𝑖𝑓𝑖𝑐 𝑝𝑙𝑢𝑔𝑖𝑛 𝑖𝑛𝑓𝑜.\
+        \n{tr}𝒉𝑒𝑙𝑝 -𝑐 <𝑐𝑜𝑚𝑚𝑎𝑛𝑑> : 𝐹𝑜𝑟 𝑎𝑛𝑦 𝑐𝑜𝑚𝑚𝑎𝑛𝑑 𝑖𝑛𝑓𝑜.\
+        \n{tr}𝑠 <𝑞𝑢𝑒𝑟𝑦> : 𝑇𝑜 𝑠𝑒𝑎𝑟𝑐𝒉 𝑎𝑛𝑦 𝑐𝑜𝑚𝑚𝑎𝑛𝑑𝑠.\
         "
     await event.answer(text, cache_time=0, alert=True)
 
@@ -560,9 +560,9 @@ async def on_plugin_callback_query_handler(event):
 async def on_plug_in_callback_query_handler(event):
     category = str(event.pattern_match.group(1).decode("UTF-8"))
     buttons = paginate_help(0, GRP_INFO[category], category)
-    text = f"**Lionegory: **{category}\
-        \n**Total plugins :** {len(GRP_INFO[category])}\
-        \n**Total Commands:** {command_in_category(category)}"
+    text = f"**𝐶𝑎𝑡𝑒𝑔𝑜𝑟𝑦: **{category}\
+        \n**𝑇𝑜𝑡𝑎𝑙 𝑃𝑙𝑢𝑔𝑖𝑛𝑠 :** {len(GRP_INFO[category])}\
+        \n**𝑇𝑜𝑡𝑎𝑙 𝐶𝑜𝑚𝑚𝑎𝑛𝑑𝑠:** {command_in_category(category)}"
     await event.edit(text, buttons=buttons)
 
 
@@ -626,9 +626,9 @@ async def on_plug_in_callback_query_handler(event):
             category_plugins=category_plugins,
             category_pgno=category_pgno,
         )
-        text = f"**Plugin: **`{category}`\
-                \n**Lionegory: **__{getkey(category)}__\
-                \n**Total Commands:** __{len(PLG_INFO[category])}__"
+        text = f"**𝑃𝑙𝑢𝑔𝑖𝑛: **`{category}`\
+                \n**𝐶𝑎𝑡𝑒𝑔𝑜𝑟𝑦: **__{getkey(category)}__\
+                \n**𝑇𝑜𝑡𝑎𝑙 𝐶𝑜𝑚𝑚𝑎𝑛𝑑𝑠:** __{len(PLG_INFO[category])}__"
         try:
             return await event.edit(text, buttons=buttons)
         except Exception:
