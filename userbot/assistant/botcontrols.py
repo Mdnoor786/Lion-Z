@@ -23,7 +23,7 @@ from .botmanagers import (
 
 LOGS = logging.getLogger(__name__)
 
-plugin_category = "misc"
+plugin_category = "bot"
 botusername = Config.TG_BOT_USERNAME
 cmhd = Config.COMMAND_HAND_LER
 
