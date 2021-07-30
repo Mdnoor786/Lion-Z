@@ -22,7 +22,7 @@ from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from .pluginmanager import load_module
 from .tools import create_supergroup
 
-LOGS = logging.getLogger("LionUserbot")
+LOGS = logging.getLogger("Lion-Z")
 cmdhr = Config.COMMAND_HAND_LER
 
 
@@ -63,8 +63,8 @@ async def startupmessage():
         if BOTLOG:
             Config.LIONUBLOGO = await lionub.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/4e3ba8e8f7e535d5a2abe.jpg",
-                caption="**Your LionUserbot has been started successfully.**",
+                "https://telegra.ph/file/bf683c73786bc35d1b6eb.jpg",
+                caption="**Your Lion-Z Userbot has been started successfully.**",
                 buttons=[(Button.url("Support", "https://t.me/LionXupdates"),)],
             )
     except Exception as e:
