@@ -10,7 +10,7 @@ from .sql_helper.globals import addgvar, delgvar, gvarstatus
 __version__ = "1.0.0"
 __license__ = "GNU Affero General Public License v3.0"
 __author__ = "LionUserBot <https://github.com/MdNoor786/Lion-Z>"
-__copyright__ = "LionUserBot Copyright (C) 2020 - 2021  " + __author__
+__copyright__ = "Lion-Z Copyright (©️) 2020 - 2021  " + __author__
 
 lionub.version = __version__
 lionub.tgbot.version = __version__
