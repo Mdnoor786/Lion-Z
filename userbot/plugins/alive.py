@@ -77,13 +77,13 @@ async def amireallyalive(event):
 
 
 @lionub.lion_cmd(
-    pattern="lion$",
-    command=("lion", plugin_category),
+    pattern="lionz$",
+    command=("lionz", plugin_category),
     info={
         "header": "To check bot's alive status via inline mode",
         "options": "To show media in this cmd you need to set ALIVE_PIC with media link, get this by replying the media by .tgm",
         "usage": [
-            "{tr}lion",
+            "{tr}lionz",
         ],
     },
 )
