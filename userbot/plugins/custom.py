@@ -145,7 +145,7 @@ async def bad(event):  # sourcery no-metrics
         "NOTE": "You can set,fetch or delete these by `{tr}setdv` , `{tr}getdv` & `{tr}deldv` as well.",
     },
 )
-async def custom_Lion-Z(event):
+async def custom_LionZ(event):
     "To customize your LionZ."
     reply = await event.get_reply_message()
     text = None
@@ -185,7 +185,7 @@ async def custom_Lion-Z(event):
         "NOTE": "You can set,fetch or delete these by `{tr}setdv` , `{tr}getdv` & `{tr}deldv` as well.",
     },
 )
-async def custom_Lion-Z(event):
+async def custom_LionZ(event):
     "To delete costomization of your LionZ."
     input_str = event.pattern_match.group(1)
     if input_str == "pmpermit":
