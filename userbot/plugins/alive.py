@@ -47,12 +47,14 @@ async def amireallyalive(event):
         A_IMG = list(LION)
         PIC = random.choice(A_IMG)
         lion_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-        lion_caption += f"**{EMOJI} Database :** `{check_sgnirts}`\n"
-        lion_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
-        lion_caption += f"**{EMOJI} Lion-Z Version :** `{lionversion}`\n"
-        lion_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
-        lion_caption += f"**{EMOJI} Uptime :** `{uptime}\n`"
-        lion_caption += f"**{EMOJI} Master:** {mention}\n"
+        lion_caption += f"┏━━━━━━━━━━━━━━━━━━━\n"
+        lion_caption += f"┣⧼•**{EMOJI} Owner:** {mention}\n"
+        lion_caption += f"┣⧼•**{EMOJI} Database :** `{check_sgnirts}`\n"
+        lion_caption += f"┣⧼•**{EMOJI} Telethon :** `{version.__version__}\n`"
+        lion_caption += f"┣⧼•**{EMOJI} Lion-Z  :** `{lionversion}`\n"
+        lion_caption += f"┣⧼•**{EMOJI} Python  :** `{python_version()}\n`"
+        lion_caption += f"┣⧼•**{EMOJI} Uptime :** `{uptime}\n`"
+        lion_caption += f"┗━━━━━━━━━━━━━━━━━━━\n"
         try:
             await event.client.send_file(
                 event.chat_id, PIC, caption=lion_caption, reply_to=reply_to_id
