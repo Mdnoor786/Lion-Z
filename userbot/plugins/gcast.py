@@ -1,17 +1,11 @@
-
-import os
-
-from telethon import events
-from telethon.tl.functions.channels import EditAdminRequest
-from telethon.tl.types import ChatAdminRights
-
 from . import *
 
 plugin_category = "admin"
 
+
 @lionub.lion_cmd(
-  pattern="gcast ?(.*)",
-  command=("gcast", plugin_category),
+    pattern="gcast ?(.*)",
+    command=("gcast", plugin_category),
     info={
         "header": "global groups cast.",
         "description": "Use this command to global broadcast a message in all groups.",
@@ -41,8 +35,8 @@ async def gcast(event):
 
 
 @lionub.lion_cmd(
-  pattern="gucast ?(.*)",
-  command=("gucast", plugin_category),
+    pattern="gucast ?(.*)",
+    command=("gucast", plugin_category),
     info={
         "header": "global users cast.",
         "description": "Use this command to broadcast global message to all users only.",

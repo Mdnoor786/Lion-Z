@@ -17,7 +17,7 @@ plugin_category = "fun"
 )
 async def hmm(lion):
     "Some random lion facial text art"
-    reactlion = nekos.textcat()
+    nekos.textcat()
     await edit_or_reply(lion, reactcat)
 
 
@@ -31,7 +31,7 @@ async def hmm(lion):
 )
 async def hmm(lion):
     "Some random Funny questions"
-    whylion = nekos.why()
+    nekos.why()
     await edit_or_reply(lion, whycat)
 
 
@@ -45,5 +45,5 @@ async def hmm(lion):
 )
 async def hmm(lion):
     "Some random facts"
-    factlion = nekos.fact()
+    nekos.fact()
     await edit_or_reply(lion, factcat)

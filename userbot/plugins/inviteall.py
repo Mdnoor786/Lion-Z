@@ -9,8 +9,6 @@ from telethon.tl.functions.messages import GetFullChatRequest
 
 from userbot import lionub
 
-from ..funcs.managers import edit_delete, edit_or_reply
-
 plugin_category = "utils"
 
 

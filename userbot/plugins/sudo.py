@@ -175,9 +175,7 @@ async def _(event):
     except AttributeError:
         sudousers = {}
     if len(sudochats) == 0:
-        return await edit_delete(
-            event, "__There are no sudo users for your Lion-Z.__"
-        )
+        return await edit_delete(event, "__There are no sudo users for your Lion-Z.__")
     result = "**The list of sudo users for your Lion-Z are :**\n\n"
     for chat in sudochats:
         result += f"☞ **Name:** {mentionuser(sudousers[str(chat)]['chat_name'],sudousers[str(chat)]['chat_id'])}\n"
@@ -221,7 +219,9 @@ async def _(event):  # sourcery no-metrics
         )
     input_str = input_str.split()
     if input_str[0] == "-all":
-        lionevent = await edit_or_reply(event, "__Enabling all safe cmds for sudo....__")
+        lionevent = await edit_or_reply(
+            event, "__Enabling all safe cmds for sudo....__"
+        )
         totalcmds = CMD_INFO.keys()
         flagcmds = (
             PLG_INFO["botcontrols"]

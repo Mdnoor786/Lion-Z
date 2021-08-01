@@ -292,7 +292,9 @@ async def _(event):
                 f"**Error while pasting text:**\n`Unable to process your request may be pastebins are down.`",
             )
     except Exception as e:
-        return await edit_delete(lionevent, f"**Error while pasting text:**\n`{str(e)}`")
+        return await edit_delete(
+            lionevent, f"**Error while pasting text:**\n`{str(e)}`"
+        )
     url = response["url"]
     chat = "@CorsaBot"
     await lionevent.edit("`Making instant view...`")

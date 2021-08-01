@@ -22,7 +22,7 @@ from youtube_dl.utils import (
 )
 
 from ..helpers.utils import _format
-from . import lionub, edit_delete, edit_or_reply, hmention, progress, reply_id, ytsearch
+from . import edit_delete, edit_or_reply, hmention, lionub, progress, reply_id, ytsearch
 
 plugin_category = "misc"
 
