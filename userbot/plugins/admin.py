@@ -165,7 +165,7 @@ async def promote(event):
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
         return await lionevent.edit(NO_PERM)
-    await lionevent.edit("`Promoted Successfully! Now gib Party`")
+    await lionevent.edit("`Promoted Successfully! Let's Nacho 💃`")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
@@ -209,7 +209,7 @@ async def demote(event):
         await event.client(EditAdminRequest(event.chat_id, user.id, newrights, rank))
     except BadRequestError:
         return await lionevent.edit(NO_PERM)
-    await lionevent.edit("`Demoted Successfully! Betterluck next time`")
+    await lionevent.edit("`Demoted Successfully! Get lost 😴😴`")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
