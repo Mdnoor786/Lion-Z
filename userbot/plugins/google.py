@@ -9,7 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 from PIL import Image
 from search_engine_parser import BingSearch, GoogleSearch, YahooSearch
-from search_engine_parser.funcs.exceptions import NoResultsOrTrafficError
+from search_engine_parser.core.exceptions import NoResultsOrTrafficError
 
 from userbot import lionub
 
@@ -74,10 +74,10 @@ async def scam(results, lim):
             "{tr}gs <query>",
         ],
         "examples": [
-            "{tr}gs Lion-Z",
-            "{tr}gs -l6 Lion-Z",
-            "{tr}gs -p2 Lion-Z",
-            "{tr}gs -p2 -l7 Lion-Z",
+            "{tr}gs Lion-Z ",
+            "{tr}gs -l6 Lion-Z ",
+            "{tr}gs -p2 Lion-Z ",
+            "{tr}gs -p2 -l7 Lion-Z ",
         ],
     },
 )
