@@ -31,5 +31,5 @@ jobs:
           commit_options: '--no-verify'
           repository: .
           commit_user_name: MdNoor786
-          commit_user_email: 66010486+MdNoor786@users.noreply.github.com
-          commit_author: MdNoor786 <66010486+MdNoor786@users.noreply.github.com>
+          commit_user_email: MdNoor786@users.noreply.github.com
+          commit_author: MdNoor786 <MdNoor786@users.noreply.github.com>
