@@ -60,7 +60,7 @@ async def noods(event):
     walls = soup.find_all("img", class_="img-responsive")
     if not walls:
         return await edit_delete(
-            catevent, f"**Can't find anything with** `{query}`", 10
+            lionevent, f"**Can't find anything with** `{query}`", 10
         )
     i = count = 0
     piclist = []
@@ -85,7 +85,7 @@ async def noods(event):
             pic = await wall_download(a, query)
             if pic is None:
                 return await edit_delete(
-                    catevent, "__Sorry i can't download wallpaper.__"
+                    lionevent, "__Sorry i can't download wallpaper.__"
                 )
             piclist.append(pic)
             piclinks.append(a)
@@ -100,7 +100,7 @@ async def noods(event):
         if count == int(limit):
             break
         if i == 5:
-            await edit_or_reply(catevent, "`Max search error limit exceed..`")
+            await edit_or_reply(lionevent, "`Max search error limit exceed..`")
     try:
         await edit_or_reply(catevent, "`Sending...`")
         captionlist[-1] = f"**➥ Query :-** `{query.title()}`"
