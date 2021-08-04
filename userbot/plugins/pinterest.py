@@ -1,5 +1,3 @@
-
-
 import os
 from urllib.request import urlretrieve as donl
 
@@ -11,6 +9,7 @@ from . import *
 _base = "https://pinterestdownloader.com/download?url="
 
 plugin_category = "utils"
+
 
 def gib_link(link):
     colon = "%3A"
