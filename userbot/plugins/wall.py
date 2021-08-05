@@ -66,7 +66,7 @@ async def noods(event):
     piclist = []
     piclinks = []
     captionlist = []
-    await edit_or_reply(catevent, "⏳ `Processing..`")
+    await edit_or_reply(lionevent, "⏳ `Processing..`")
     url2 = "https://api.alphacoders.com/content/get-download-link"
     for x in walls:
         wall = random.choice(walls)["src"][8:-4]
@@ -81,7 +81,7 @@ async def noods(event):
         res = requests.post(url2, data=data)
         a = res.json()["link"]
         if "We are sorry," not in requests.get(a).text and a not in piclinks:
-            await edit_or_reply(catevent, "📥** Downloading...**")
+            await edit_or_reply(lionevent, "📥** Downloading...**")
             pic = await wall_download(a, query)
             if pic is None:
                 return await edit_delete(
@@ -102,7 +102,7 @@ async def noods(event):
         if i == 5:
             await edit_or_reply(lionevent, "`Max search error limit exceed..`")
     try:
-        await edit_or_reply(catevent, "`Sending...`")
+        await edit_or_reply(lionevent, "`Sending...`")
         captionlist[-1] = f"**➥ Query :-** `{query.title()}`"
         await event.client.send_file(
             event.chat_id,
@@ -111,7 +111,7 @@ async def noods(event):
             reply_to=reply_to_id,
             force_document=True,
         )
-        await catevent.delete()
+        await lionevent.delete()
     except Exception as e:
         LOGS.info(str(e))
     for i in piclist:
