@@ -1,5 +1,4 @@
 from telethon import functions
-
 from telethon.errors import (
     ChannelInvalidError,
     ChannelPrivateError,
@@ -7,7 +6,6 @@ from telethon.errors import (
 )
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
-
 
 from userbot import lionub
 
@@ -86,7 +84,7 @@ async def get_chatinfo(event):
         except ChannelPublicGroupNaError:
             await event.reply("`Channel or supergroup doesn't exist`")
             return None
-        except (TypeError, ValueError) as err:
+        except (TypeError, ValueError):
             await event.reply("`Invalid channel/group`")
             return None
     return chat_info
