@@ -435,6 +435,7 @@ async def liongkick(event):  # sourcery no-metrics
         if reply:
             await reply.forward_to(BOTLOG_CHATID)
 
+
 async def get_full_user(event):
     args = event.pattern_match.group(1).split(":", 1)
     extra = None
