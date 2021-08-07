@@ -68,8 +68,8 @@ def verify_cond(lionarray, text):
 
 def pack_name(userid, pack, is_anim):
     if is_anim:
-        return f"Lion-Z_{userid}_{pack}_anim"
-    return f"Lion-Z_{userid}_{pack}"
+        return f"Lion_Z_{userid}_{pack}_anim"
+    return f"Lion_Z_{userid}_{pack}"
 
 
 def char_is_emoji(character):
