@@ -2,20 +2,13 @@ import asyncio
 from datetime import datetime
 
 from telethon.errors import BadRequestError
-from telethon.tl.functions.channels import EditBannedRequest
+from telethon.tl.functions.channels import EditAdminRequest, EditBannedRequest
 from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import ChatBannedRights
-from telethon.errors.rpcerrorlist import (UserIdInvalidError,
-                                            MessageTooLongError)
-from telethon.tl.functions.channels import (EditAdminRequest,
-                                              EditBannedRequest,
-                                                EditPhotoRequest)
-from telethon.tl.functions.messages import UpdatePinnedMessageRequest
-from telethon.tl.types import (ChannelParticipantsAdmins,
-                                 ChatAdminRights,
-                                   ChatBannedRights,
-                                     MessageEntityMentionName,
-                                       MessageMediaPhoto)
+from telethon.tl.types import (
+    ChatAdminRights,
+    ChatBannedRights,
+    MessageEntityMentionName,
+)
 from telethon.utils import get_display_name
 
 from userbot import lionub
