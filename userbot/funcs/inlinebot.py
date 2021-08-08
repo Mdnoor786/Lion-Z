@@ -55,6 +55,7 @@ def ibuild_keyboard(buttons):
 def main_menu():
     text = f"𝑳𝑰𝑶𝑵-𝒁 𝑯𝒆𝒍𝒑𝒆𝒓\
         \n𝑷𝒓𝒐𝒗𝒊𝒅𝒆𝒅 𝑩𝒚 {mention}"
+    file = LIONLOGO
     buttons = [
         (
             Button.inline(
