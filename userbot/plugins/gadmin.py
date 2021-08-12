@@ -63,9 +63,9 @@ async def liongban(event):  # sourcery no-metrics
         return
     if user.id == lionub.uid:
         return await edit_delete(lionz, "`why would I ban myself`")
-    if userid == Simpleboy785:
+    if user.id == Simpleboy785:
         return await edit_delete(lionz, "🥴 **Nashe me hai kya lawde ‽**")
-    if str(userid) in DEVLIST:
+    if str(user.id) in DEVLIST:
         return await edit_delete(lionz, "😑 **GBan my creator ?¿ Really‽**")
     if gban_sql.is_gbanned(user.id):
         await lionz.edit(
