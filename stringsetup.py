@@ -23,7 +23,7 @@ print(
 
 𝐑𝐮𝐧𝐧𝐢𝐧𝐠 𝐋𝐢𝐨𝐧-𝐙 𝐎𝐧 𝐅𝐢𝐫𝐞  🔥🔥🔥🔥...."""
 )
-APP_ID = int(input("Enter APP ID here: ")
+APP_ID = int(input("Enter APP ID here: "))
 API_HASH = input("Enter API HASH here: ")
 
 with TelegramClient(StringSession(), APP_ID, API_HASH) as client:
