@@ -7,7 +7,7 @@ from .funcs.logger import logging
 from .funcs.session import lionub
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __license__ = "GNU Affero General Public License v3.0"
 __author__ = "LionUserBot <https://github.com/MdNoor786/Lion-Z>"
 __copyright__ = "Lion-Z Copyright (©️) 2020 - 2021  " + __author__
@@ -18,7 +18,7 @@ LOGS = logging.getLogger("Lion-Z")
 bot = lionub
 
 StartTime = time.time()
-lionversion = "1.0.1"
+lionversion = "1.0.2"
 
 if Config.UPSTREAM_REPO == "lion":
     UPSTREAM_REPO_URL = "https://github.com/MdNoor786/Lion-Z"
