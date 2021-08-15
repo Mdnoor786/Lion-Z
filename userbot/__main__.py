@@ -27,7 +27,7 @@ try:
     lionub.loop.run_until_complete(setup_bot())
     LOGS.info("TG Bot Startup Completed")
 except Exception as e:
-    LOGS.error(f"{str(e)}")
+    LOGS.error(f"{e}")
     sys.exit()
 
 
@@ -61,6 +61,7 @@ async def startup_process():
     await startupmessage()
     Lioncheck.sucess = True
     return
+
 
 
 lionub.loop.run_until_complete(startup_process())
