@@ -63,7 +63,6 @@ async def startup_process():
     return
 
 
-
 lionub.loop.run_until_complete(startup_process())
 
 if len(sys.argv) not in (1, 3, 4):
