@@ -321,7 +321,7 @@ async def inline_handler(event):  # sourcery no-metrics
             query = query[7:]
             user, txct = query.split(" ", 1)
             builder = event.builder
-            troll = os.path.join("./userbot", "troll.txt")
+            os.path.join("./userbot", "troll.txt")
             try:
                 jsondata = json.load(open(secret))
             except Exception:
