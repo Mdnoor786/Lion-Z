@@ -153,7 +153,7 @@ async def delete_chatbot(event):
         ],
     },
 )
-async def list_chatbot(event):  # sourcery no-metrics
+async def list_chatbot(event):    # sourcery no-metrics
     "To list all users on who you enabled ai."
     input_str = event.pattern_match.group(1)
     private_chats = ""
@@ -197,7 +197,7 @@ async def list_chatbot(event):  # sourcery no-metrics
                 private_chats += (
                     f"☞ [{echos.user_name}](tg://user?id={echos.user_id})\n"
                 )
-        output_str = f"**Ai enabled users in this chat are:**\n" + private_chats
+        output_str = "**Ai enabled users in this chat are:**\\n" + private_chats
     await edit_or_reply(event, output_str)
 
 

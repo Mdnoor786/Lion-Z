@@ -41,20 +41,19 @@ async def amireallyalive(event):
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "  ✨ "
     CUSTOM_ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "✮ HI MASTER I AM ALIVE LION-Z... ✮"
-    LION_IMG = gvarstatus("ALIVE_PIC")
-    if LION_IMG:
-        LION = [x for x in LION_IMG.split()]
+    if LION_IMG := gvarstatus("ALIVE_PIC"):
+        LION = list(LION_IMG.split())
         A_IMG = list(LION)
         PIC = random.choice(A_IMG)
         lion_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
-        lion_caption += f"┏━━━━━━━━━━━━━━━━━━━\n"
+        lion_caption += "┏━━━━━━━━━━━━━━━━━━━\\n"
         lion_caption += f"┣⧼•**{EMOJI} Owner:** {mention}\n"
         lion_caption += f"┣⧼•**{EMOJI} Database :** `{check_sgnirts}`\n"
         lion_caption += f"┣⧼•**{EMOJI} Telethon :** `{version.__version__}\n`"
         lion_caption += f"┣⧼•**{EMOJI} Lion-Z  :** `{lionversion}`\n"
         lion_caption += f"┣⧼•**{EMOJI} Python  :** `{python_version()}\n`"
         lion_caption += f"┣⧼•**{EMOJI} Uptime :** `{uptime}\n`"
-        lion_caption += f"┗━━━━━━━━━━━━━━━━━━━\n"
+        lion_caption += "┗━━━━━━━━━━━━━━━━━━━\\n"
         try:
             await event.client.send_file(
                 event.chat_id, PIC, caption=lion_caption, reply_to=reply_to_id
@@ -93,7 +92,7 @@ async def amireallyalive(event):
     "A kind of showing bot details by your inline bot"
     reply_to_id = await reply_id(event)
     EMOJI = gvarstatus("ALIVE_EMOJI") or "  ♦️ "
-    lion_caption = f"**Lion-Z is Up and Running**\n"
+    lion_caption = "**Lion-Z is Up and Running**\\n"
     lion_caption += f"**{EMOJI} Telethon :** `{version.__version__}\n`"
     lion_caption += f"**{EMOJI} Lion-Z :** `{lionversion}`\n"
     lion_caption += f"**{EMOJI} Python :** `{python_version()}\n`"

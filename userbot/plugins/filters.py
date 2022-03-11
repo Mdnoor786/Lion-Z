@@ -41,7 +41,7 @@ async def filter_incoming_handler(handler):  # sourcery no-metrics
     my_fullname = f"{my_first} {my_last}" if my_last else my_first
     my_username = f"@{me.username}" if me.username else my_mention
     for trigger in filters:
-        pattern = r"( |^|[^\w])" + re.escape(trigger.keyword) + r"( |$|[^\w])"
+        pattern = f"( |^|[^\\w]){re.escape(trigger.keyword)}( |$|[^\\w])"
         if re.search(pattern, name, flags=re.IGNORECASE):
             if trigger.f_mesg_id:
                 msg_o = await handler.client.get_messages(
@@ -187,9 +187,9 @@ async def remove_a_filter(r_handler):
     "Stops the specified keyword."
     filt = r_handler.pattern_match.group(1)
     if not remove_filter(r_handler.chat_id, filt):
-        await r_handler.edit("Filter` {} `doesn't exist.".format(filt))
+        await r_handler.edit(f"Filter` {filt} `doesn't exist.")
     else:
-        await r_handler.edit("Filter `{} `was deleted successfully".format(filt))
+        await r_handler.edit(f"Filter `{filt} `was deleted successfully")
 
 
 @lionub.lion_cmd(
@@ -205,6 +205,6 @@ async def on_all_snip_delete(event):
     filters = get_filters(event.chat_id)
     if filters:
         remove_all_filters(event.chat_id)
-        await edit_or_reply(event, f"filters in current chat deleted successfully")
+        await edit_or_reply(event, "filters in current chat deleted successfully")
     else:
-        await edit_or_reply(event, f"There are no filters in this group")
+        await edit_or_reply(event, "There are no filters in this group")

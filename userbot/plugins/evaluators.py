@@ -45,8 +45,7 @@ async def _(event):
     )
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID,
-            "Terminal command " + cmd + " was executed sucessfully.",
+            BOTLOG_CHATID, f"Terminal command {cmd} was executed sucessfully."
         )
 
 
@@ -103,8 +102,7 @@ async def _(event):
     )
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID,
-            "eval command " + cmd + " was executed sucessfully.",
+            BOTLOG_CHATID, f"eval command {cmd} was executed sucessfully."
         )
 
 
@@ -113,9 +111,12 @@ async def aexec(code, smessatatus):
     p = lambda _x: print(_format.yaml_format(_x))
     reply = await event.get_reply_message()
     exec(
-        f"async def __aexec(message, event , reply, client, p, chat): "
-        + "".join(f"\n {l}" for l in code.split("\n"))
+        (
+            "async def __aexec(message, event , reply, client, p, chat): "
+            + "".join(f"\n {l}" for l in code.split("\n"))
+        )
     )
+
     return await locals()["__aexec"](
         message, event, reply, message.client, p, message.chat_id
     )

@@ -31,9 +31,9 @@ async def formatJSON(outData):
     link = f"https://anilist.co/anime/{jsonData['id']}"
     msg += f"[{title}]({link})"
     msg += f"\n\n**Type** : {jsonData['format']}"
-    msg += f"\n**Genres** : "
+    msg += "\\n**Genres** : "
     for g in jsonData["genres"]:
-        msg += g + " "
+        msg += f'{g} '
     msg += f"\n**Status** : {jsonData['status']}"
     msg += f"\n**Episode** : {jsonData['episodes']}"
     msg += f"\n**Year** : {jsonData['startDate']['year']}"
@@ -50,7 +50,7 @@ async def formatJSON(outData):
 def shorten(description, info="anilist.co"):
     msg = ""
     if len(description) > 700:
-        description = description[0:200] + "....."
+        description = description[:200] + "....."
         msg += f"\n**Description**:\n{description} [Read More]({info})"
     else:
         msg += f"\n**Description**: \n   {description}"
@@ -194,10 +194,9 @@ def getBannerLink(mal, kitsu_search=True):
     }
     """
     data = {"query": query, "variables": {"idMal": int(mal)}}
-    image = requests.post("https://graphql.anilist.co", json=data).json()["data"][
-        "Media"
-    ]["bannerImage"]
-    if image:
+    if image := requests.post("https://graphql.anilist.co", json=data).json()[
+        "data"
+    ]["Media"]["bannerImage"]:
         return image
     return getPosterLink(mal)
 
@@ -206,8 +205,7 @@ def get_anime_manga(mal_id, search_type, _user_id):  # sourcery no-metrics
     jikan = jikanpy.jikan.Jikan()
     if search_type == "anime_anime":
         result = jikan.anime(mal_id)
-        trailer = result["trailer_url"]
-        if trailer:
+        if trailer := result["trailer_url"]:
             LOL = f"<a href='{trailer}'>Trailer</a>"
         else:
             LOL = "<i>No Trailer Available</i>"
@@ -349,6 +347,9 @@ def memory_file(name=None, contents=None, *, bytes=True):
 def is_gif(file):
     # ngl this should be fixed, telethon.utils.is_gif but working
     # lazy to go to github and make an issue kek
-    if not is_video(file):
-        return False
-    return DocumentAttributeAnimated() in getattr(file, "document", file).attributes
+    return (
+        DocumentAttributeAnimated()
+        in getattr(file, "document", file).attributes
+        if is_video(file)
+        else False
+    )

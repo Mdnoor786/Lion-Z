@@ -215,8 +215,7 @@ async def bloom_pfploop():
 
 
 async def autoname_loop():
-    AUTONAMESTART = gvarstatus("autoname") == "true"
-    while AUTONAMESTART:
+    while AUTONAMESTART := gvarstatus("autoname") == "true":
         DM = time.strftime("%d-%m-%y")
         HM = time.strftime("%H:%M")
         name = f"⌚️ {HM}||›  {DEFAULTUSER} ‹||📅 {DM}"
@@ -227,12 +226,10 @@ async def autoname_loop():
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
         await asyncio.sleep(Config.CHANGE_TIME)
-        AUTONAMESTART = gvarstatus("autoname") == "true"
 
 
 async def autobio_loop():
-    AUTOBIOSTART = gvarstatus("autobio") == "true"
-    while AUTOBIOSTART:
+    while AUTOBIOSTART := gvarstatus("autobio") == "true":
         DMY = time.strftime("%d.%m.%Y")
         HM = time.strftime("%H:%M")
         bio = f"📅 {DMY} | {DEFAULTUSERBIO} | ⌚️ {HM}"
@@ -243,16 +240,15 @@ async def autobio_loop():
             LOGS.warning(str(ex))
             await asyncio.sleep(ex.seconds)
         await asyncio.sleep(Config.CHANGE_TIME)
-        AUTOBIOSTART = gvarstatus("autobio") == "true"
 
 
 async def animeprofilepic(collection_images):
     rnd = random.randint(0, len(collection_images) - 1)
     pack = collection_images[rnd]
-    pc = requests.get("http://getwallpapers.com/collection/" + pack).text
+    pc = requests.get(f"http://getwallpapers.com/collection/{pack}").text
     f = re.compile(r"/\w+/full.+.jpg")
     f = f.findall(pc)
-    fy = "http://getwallpapers.com" + random.choice(f)
+    fy = f"http://getwallpapers.com{random.choice(f)}"
     if not os.path.exists("f.ttf"):
         urllib.request.urlretrieve(
             "https://github.com/rebel6969/mym/raw/master/Rebel-robot-Regular.ttf",
@@ -367,11 +363,11 @@ async def _(event):
     elif gvarstatus("autopic_counter") is None:
         addgvar("autopic_counter", 30)
     if gvarstatus("autopic") is not None and gvarstatus("autopic") == "true":
-        return await edit_delete(event, f"`Autopic is already enabled`")
+        return await edit_delete(event, "`Autopic is already enabled`")
     addgvar("autopic", True)
     if input_str:
         addgvar("autopic_counter", input_str)
-    await edit_delete(event, f"`Autopic has been started by my Master`")
+    await edit_delete(event, "`Autopic has been started by my Master`")
     await autopicloop()
 
 
@@ -393,9 +389,9 @@ async def _(event):
     while not downloader.isFinished():
         pass
     if gvarstatus("digitalpic") is not None and gvarstatus("digitalpic") == "true":
-        return await edit_delete(event, f"`Digitalpic is already enabled`")
+        return await edit_delete(event, "`Digitalpic is already enabled`")
     addgvar("digitalpic", True)
-    await edit_delete(event, f"`digitalpfp has been started by my Master`")
+    await edit_delete(event, "`digitalpfp has been started by my Master`")
     await digitalpicloop()
 
 
@@ -424,9 +420,9 @@ async def _(event):
     while not downloader.isFinished():
         pass
     if gvarstatus("bloom") is not None and gvarstatus("bloom") == "true":
-        return await edit_delete(event, f"`Bloom is already enabled`")
+        return await edit_delete(event, "`Bloom is already enabled`")
     addgvar("bloom", True)
-    await edit_delete(event, f"`Bloom has been started by my Master`")
+    await edit_delete(event, "`Bloom has been started by my Master`")
     await bloom_pfploop()
 
 
@@ -448,7 +444,7 @@ async def _(event):
         ],
     },
 )
-async def useless(event):  # sourcery no-metrics
+async def useless(event):    # sourcery no-metrics
     """Custom profile pics"""
     input_str = event.pattern_match.group(2)
     ext = re.findall(r"-\w+", input_str)
@@ -460,7 +456,7 @@ async def useless(event):  # sourcery no-metrics
     list_link = get_collection_list("CUSTOM_PFP_LINKS")
     if flag is None:
         if gvarstatus("CUSTOM_PFP") is not None and gvarstatus("CUSTOM_PFP") == "true":
-            return await edit_delete(event, f"`Custom pfp is already enabled`")
+            return await edit_delete(event, "`Custom pfp is already enabled`")
         if not list_link:
             return await edit_delete(event, "**ಠ∀ಠ  There no links for custom pfp...**")
         addgvar("CUSTOM_PFP", True)
@@ -529,7 +525,7 @@ async def useless(event):  # sourcery no-metrics
 async def _(event):
     "To set your display name along with time"
     if gvarstatus("autoname") is not None and gvarstatus("autoname") == "true":
-        return await edit_delete(event, f"`Autoname is already enabled`")
+        return await edit_delete(event, "`Autoname is already enabled`")
     addgvar("autoname", True)
     await edit_delete(event, "`AutoName has been started by my Master `")
     await autoname_loop()
@@ -548,7 +544,7 @@ async def _(event):
 async def _(event):
     "To update your bio along with time"
     if gvarstatus("autobio") is not None and gvarstatus("autobio") == "true":
-        return await edit_delete(event, f"`Autobio is already enabled`")
+        return await edit_delete(event, "`Autobio is already enabled`")
     addgvar("autobio", True)
     await edit_delete(event, "`Autobio has been started by my Master `")
     await autobio_loop()
@@ -574,13 +570,13 @@ async def _(event):
         "examples": ["{tr}end autopic"],
     },
 )
-async def _(event):  # sourcery no-metrics
+async def _(event):    # sourcery no-metrics
     "To stop the functions of autoprofile plugin"
     input_str = event.pattern_match.group(1)
     if input_str == "thorpfp" and gvarstatus("autopfp_strings") is not None:
         pfp_string = gvarstatus("autopfp_strings")[:-8]
         if pfp_string != "thorpfp":
-            return await edit_delete(event, f"`thorpfp is not started`")
+            return await edit_delete(event, "`thorpfp is not started`")
         await event.client(
             functions.photos.DeletePhotosRequest(
                 await event.client.get_profile_photos("me", limit=1)
@@ -591,7 +587,7 @@ async def _(event):  # sourcery no-metrics
     if input_str == "batmanpfp" and gvarstatus("autopfp_strings") is not None:
         pfp_string = gvarstatus("autopfp_strings")[:-8]
         if pfp_string != "batmanpfp":
-            return await edit_delete(event, f"`batmanpfp is not started`")
+            return await edit_delete(event, "`batmanpfp is not started`")
         await event.client(
             functions.photos.DeletePhotosRequest(
                 await event.client.get_profile_photos("me", limit=1)

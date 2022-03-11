@@ -148,9 +148,7 @@ async def bad(event):  # sourcery no-metrics
 async def custom_LionZ(event):
     "To customize your LionZ."
     reply = await event.get_reply_message()
-    text = None
-    if reply:
-        text = reply.text
+    text = reply.text if reply else None
     if not reply and text:
         return await edit_delete(event, "__Reply to custom text or url__")
     input_str = event.pattern_match.group(1)

@@ -205,12 +205,14 @@ async def bot_pms_edit(event):  # sourcery no-metrics
         users = get_user_reply(event.id)
         if users is None:
             return
-        reply_msg = None
-        for user in users:
-            if user.chat_id == str(chat.id):
-                reply_msg = user.message_id
-                break
-        if reply_msg:
+        if reply_msg := next(
+            (
+                user.message_id
+                for user in users
+                if user.chat_id == str(chat.id)
+            ),
+            None,
+        ):
             await event.client.send_message(
                 Config.OWNER_ID,
                 f"⬆️ **This message was edited by the user** {_format.mentionuser(get_display_name(chat) , chat.id)} as :",
@@ -266,11 +268,15 @@ async def handler(event):
                 except Exception as e:
                     LOGS.error(str(e))
         if users_1 is not None:
-            reply_msg = None
-            for user in users_1:
-                if user.chat_id != Config.OWNER_ID:
-                    reply_msg = user.message_id
-                    break
+            reply_msg = next(
+                (
+                    user.message_id
+                    for user in users_1
+                    if user.chat_id != Config.OWNER_ID
+                ),
+                None,
+            )
+
             try:
                 if reply_msg:
                     users = get_user_id(reply_msg)
@@ -289,10 +295,7 @@ async def handler(event):
                 LOGS.error(str(e))
 
 
-@lionub.bot_cmd(
-    pattern=f"^/uinfo$",
-    from_users=Config.OWNER_ID,
-)
+@lionub.bot_cmd(pattern="^/uinfo$", from_users=Config.OWNER_ID)
 async def bot_start(event):
     reply_to = await reply_id(event)
     if not reply_to:
@@ -453,9 +456,9 @@ def is_flood(uid: int) -> Optional[bool]:
 @check_owner
 async def settings_toggle(c_q: CallbackQuery):
     if gvarstatus("bot_antif") is None:
-        return await c_q.answer(f"Bot Antiflood was already disabled.", alert=False)
+        return await c_q.answer("Bot Antiflood was already disabled.", alert=False)
     delgvar("bot_antif")
-    await c_q.answer(f"Bot Antiflood disabled.", alert=False)
+    await c_q.answer("Bot Antiflood disabled.", alert=False)
     await c_q.edit("BOT_ANTIFLOOD is now disabled !")
 
 

@@ -41,7 +41,7 @@ async def get_cast(casttype, movie):
             if i < 1:
                 mov_casttype += str(j)
             elif i < 5:
-                mov_casttype += ", " + str(j)
+                mov_casttype += f", {str(j)}"
             else:
                 break
             i += 1
@@ -128,12 +128,12 @@ def higlighted_text(
     for i, items in enumerate(list_text):
         x, y = (font.getsize(list_text[i])[0] + 50, int(th * 2 - (th / 2)))
         # align masks on the image....left,right & center
-        if align == "right":
-            width_align = "(mask_size-x)"
-        if align == "left":
-            width_align = "0"
         if align == "center":
             width_align = "((mask_size-x)/2)"
+        elif align == "left":
+            width_align = "0"
+        elif align == "right":
+            width_align = "(mask_size-x)"
         clr = ImageColor.getcolor(background, "RGBA")
         if transparency == 0:
             mask_img = Image.new(
@@ -223,10 +223,7 @@ async def unzip(downloaded_file_name):
 async def covidindia(state):
     url = "https://www.mohfw.gov.in/data/datanew.json"
     req = requests.get(url).json()
-    for i in states:
-        if i == state:
-            return req[states.index(i)]
-    return None
+    return next((req[states.index(i)] for i in states if i == state), None)
 
 
 async def hide_inlinebot(borg, bot_name, text, chat_id, reply_to_id, c_lick=0):

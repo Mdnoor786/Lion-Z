@@ -94,9 +94,7 @@ async def load(event):
 async def send(event):
     "To uplaod a plugin file to telegram chat"
     reply_to_id = await reply_id(event)
-    thumb = None
-    if os.path.exists(thumb_image_path):
-        thumb = thumb_image_path
+    thumb = thumb_image_path if os.path.exists(thumb_image_path) else None
     input_str = event.pattern_match.group(1)
     the_plugin_file = f"./userbot/plugins/{input_str}.py"
     if os.path.exists(the_plugin_file):

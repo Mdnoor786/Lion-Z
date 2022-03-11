@@ -90,7 +90,7 @@ async def plugininfo(input_str, event, flag):
         try:
             outstr += f"•  **info :** `{CMD_INFO[cmd][1]}`\n\n"
         except IndexError:
-            outstr += f"•  **info :** `None`\n\n"
+            outstr += "•  **info :** `None`\\n\\n"
     outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help <command name>`\
         \n**Note : **If command name is same as plugin name then use this `{cmdprefix}help -c <command name>`."
     return outstr
@@ -157,14 +157,13 @@ async def _(event):
         outstr = await plugininfo(input_str, event, flag)
         if outstr is None:
             return
+    elif flag == "-t":
+        outstr = await grpinfo()
     else:
-        if flag == "-t":
-            outstr = await grpinfo()
-        else:
-            results = await event.client.inline_query(Config.TG_BOT_USERNAME, "help")
-            await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
-            await event.delete()
-            return
+        results = await event.client.inline_query(Config.TG_BOT_USERNAME, "help")
+        await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
+        await event.delete()
+        return
     await edit_or_reply(event, outstr)
 
 
@@ -182,10 +181,7 @@ async def _(event):
 )
 async def _(event):
     "To get list of commands."
-    input_str = event.pattern_match.group(1)
-    if not input_str:
-        outstr = await cmdlist()
-    else:
+    if input_str := event.pattern_match.group(1):
         try:
             cmds = PLG_INFO[input_str]
         except KeyError:
@@ -196,6 +192,8 @@ async def _(event):
         for cmd in cmds:
             outstr += f"  - `{cmdprefix}{cmd}`\n"
         outstr += f"**👩‍💻 Usage : ** `{cmdprefix}help -c <command name>`"
+    else:
+        outstr = await cmdlist()
     await edit_or_reply(
         event, outstr, aslink=True, linktext="Total Commands of Lion-Z are :"
     )
@@ -212,8 +210,7 @@ async def _(event):
 async def _(event):
     "To search commands."
     cmd = event.pattern_match.group(1)
-    found = [i for i in sorted(list(CMD_INFO)) if cmd in i]
-    if found:
+    if found := [i for i in sorted(list(CMD_INFO)) if cmd in i]:
         out_str = "".join(f"`{i}`    " for i in found)
         out = f"**I found {len(found)} command(s) for: **`{cmd}`\n\n{out_str}"
         out += f"\n\n__For more info check {cmdprefix}help -c <command>__"

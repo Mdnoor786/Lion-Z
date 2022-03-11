@@ -83,19 +83,9 @@ async def _(event):
         os.remove(tgbot_reply_message)
 
 
-@lionub.lion_cmd(
-    pattern="ibutton(?:\s|$)([\s\S]*)",
-    command=("ibutton", plugin_category),
-    info={
-        "header": "To create button posts via inline",
-        "note": f"Markdown is Default to html",
-        "options": "If you button to be in same row as other button then follow this <buttonurl:link:same> in 2nd button.",
-        "usage": [
+@lionub.lion_cmd(pattern="ibutton(?:\s|$)([\s\S]*)", command=("ibutton", plugin_category), info={"header": "To create button posts via inline", "note": "Markdown is Default to html", "options": "If you button to be in same row as other button then follow this <buttonurl:link:same> in 2nd button.", "usage": [
             "{tr}ibutton <text> [Name on button]<buttonurl:link you want to open>",
-        ],
-        "examples": "{tr}ibutton test [google]<buttonurl:https://www.google.com> [Lion-Z]<buttonurl:https://t.me/LionXupdates:same> [support]<buttonurl:https://t.me/LionXsupport>",
-    },
-)
+        ], "examples": "{tr}ibutton test [google]<buttonurl:https://www.google.com> [Lion-Z]<buttonurl:https://t.me/LionXupdates:same> [support]<buttonurl:https://t.me/LionXsupport>"})
 async def _(event):
     "To create button posts via inline"
     reply_to_id = await reply_id(event)
@@ -107,7 +97,7 @@ async def _(event):
         markdown_note = "".join(event.text.split(maxsplit=1)[1:])
     if not markdown_note:
         return await edit_delete(event, "`what text should i use in button post`")
-    lioninput = "Inline buttons " + markdown_note
+    lioninput = f"Inline buttons {markdown_note}"
     results = await event.client.inline_query(Config.TG_BOT_USERNAME, lioninput)
     await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
     await event.delete()

@@ -23,10 +23,11 @@ async def kakashi(event):
     "Get latest Magisk releases"
     magisk_repo = "https://raw.githubusercontent.com/topjohnwu/magisk-files/"
     magisk_dict = {
-        "⦁ **Stable**": magisk_repo + "master/stable.json",
-        "⦁ **Beta**": magisk_repo + "master/beta.json",
-        "⦁ **Canary**": magisk_repo + "master/canary.json",
+        "⦁ **Stable**": f'{magisk_repo}master/stable.json',
+        "⦁ **Beta**": f'{magisk_repo}master/beta.json',
+        "⦁ **Canary**": f'{magisk_repo}master/canary.json',
     }
+
     releases = "**Latest Magisk Releases**\n\n"
     for name, release_url in magisk_dict.items():
         data = get(release_url).json()
@@ -61,8 +62,7 @@ async def device_info(event):
             "certified-android-devices/master/by_device.json"
         ).text
     )
-    results = data.get(codename)
-    if results:
+    if results := data.get(codename):
         reply = f"**Search results for {codename}**:\n\n"
         for item in results:
             reply += (
@@ -105,12 +105,12 @@ async def codename_info(event):
     )
     devices_lower = {k.lower(): v for k, v in data.items()}
     devices = devices_lower.get(brand)
-    results = [
+    if results := [
         i
         for i in devices
-        if i["name"].lower() == device.lower() or i["model"].lower() == device.lower()
-    ]
-    if results:
+        if i["name"].lower() == device.lower()
+        or i["model"].lower() == device.lower()
+    ]:
         reply = f"**Search results for {brand} {device}**:\n\n"
         if len(results) > 8:
             results = results[:8]
