@@ -153,7 +153,7 @@ async def delete_chatbot(event):
         ],
     },
 )
-async def list_chatbot(event):    # sourcery no-metrics
+async def list_chatbot(event):  # sourcery no-metrics
     "To list all users on who you enabled ai."
     input_str = event.pattern_match.group(1)
     private_chats = ""

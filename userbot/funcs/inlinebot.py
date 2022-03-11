@@ -58,29 +58,19 @@ def main_menu():
     buttons = [
         (Button.inline("🔻 Info", data="check"),),
         (
-            Button.inline(
-                f"🖍️ 𝙰𝚍𝚖𝚒𝚗 ({len(GRP_INFO['admin'])})", data="admin_menu"
-            ),
+            Button.inline(f"🖍️ 𝙰𝚍𝚖𝚒𝚗 ({len(GRP_INFO['admin'])})", data="admin_menu"),
             Button.inline(f"🕊️ Bot ({len(GRP_INFO['bot'])})", data="bot_menu"),
         ),
         (
             Button.inline(f"🤪 𝙵𝚞𝚗 ({len(GRP_INFO['fun'])})", data="fun_menu"),
-            Button.inline(
-                f"✨ 𝙼𝚒𝚜𝚌 ({len(GRP_INFO['misc'])})", data="misc_menu"
-            ),
+            Button.inline(f"✨ 𝙼𝚒𝚜𝚌 ({len(GRP_INFO['misc'])})", data="misc_menu"),
         ),
         (
-            Button.inline(
-                f"🧨 𝚃𝚘𝚘𝚕𝚜 ({len(GRP_INFO['tools'])})", data="tools_menu"
-            ),
-            Button.inline(
-                f"🗂 𝚄𝚝𝚒𝚕𝚜 ({len(GRP_INFO['utils'])})", data="utils_menu"
-            ),
+            Button.inline(f"🧨 𝚃𝚘𝚘𝚕𝚜 ({len(GRP_INFO['tools'])})", data="tools_menu"),
+            Button.inline(f"🗂 𝚄𝚝𝚒𝚕𝚜 ({len(GRP_INFO['utils'])})", data="utils_menu"),
         ),
         (
-            Button.inline(
-                f"➕ 𝙴𝚡𝚝𝚛𝚊 ({len(GRP_INFO['extra'])})", data="extra_menu"
-            ),
+            Button.inline(f"➕ 𝙴𝚡𝚝𝚛𝚊 ({len(GRP_INFO['extra'])})", data="extra_menu"),
             Button.inline("♦️ 𝙲𝚕𝚘𝚜𝚎 𝙼𝚎𝚗𝚞", data="close"),
         ),
     ]

@@ -111,11 +111,15 @@ async def bot_broadcast(event):
     await br_cast.edit(b_info, parse_mode="html")
 
 
-@lionub.lion_cmd(pattern="bot_users$", command=("bot_users", plugin_category), info={
+@lionub.lion_cmd(
+    pattern="bot_users$",
+    command=("bot_users", plugin_category),
+    info={
         "header": "To get users list who started bot.",
         "description": "To get compelete list of users who started your bot",
         "usage": "{tr}bot_users",
-    })
+    },
+)
 async def ban_starters(event):
     "To get list of users who started bot."
     ulist = get_all_starters()
@@ -182,11 +186,15 @@ async def ban_botpms(event):
     await event.reply(msg)
 
 
-@lionub.lion_cmd(pattern="bblist$", command=("bblist", plugin_category), info={
+@lionub.lion_cmd(
+    pattern="bblist$",
+    command=("bblist", plugin_category),
+    info={
         "header": "To get users list who are banned in bot.",
         "description": "To get list of users who are banned in bot.",
         "usage": "{tr}bblist",
-    })
+    },
+)
 async def ban_starters(event):
     "To get list of users who are banned in bot."
     ulist = get_all_bl_users()
@@ -198,14 +206,18 @@ async def ban_starters(event):
     await edit_or_reply(event, msg)
 
 
-@lionub.lion_cmd(pattern="bot_antif (on|off)$", command=("bot_antif", plugin_category), info={
+@lionub.lion_cmd(
+    pattern="bot_antif (on|off)$",
+    command=("bot_antif", plugin_category),
+    info={
         "header": "To enable or disable bot antiflood.",
         "description": "if it was turned on then after 10 messages or 10 edits of same messages in less time then your bot auto loacks them.",
         "usage": [
             "{tr}bot_antif on",
             "{tr}bot_antif off",
         ],
-    })
+    },
+)
 async def ban_antiflood(event):
     "To enable or disable bot antiflood."
     input_str = event.pattern_match.group(1)

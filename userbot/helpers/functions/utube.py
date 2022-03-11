@@ -127,7 +127,7 @@ def get_choice_by_id(choice_id, media_type: str):
     else:
         disp_str = str(choice_id)
         choice_str = (
-            f'{disp_str}+(258/256/140/bestaudio[ext=m4a])/best'
+            f"{disp_str}+(258/256/140/bestaudio[ext=m4a])/best"
             if media_type == "v"
             else disp_str
         )
@@ -224,7 +224,7 @@ def download_button(vid: str, body: bool = False):  # sourcery no-metrics
         fr_size = video.get("filesize")
         if video.get("ext") == "mp4":
             for frmt_ in qual_list:
-                if fr_note in (frmt_, f'{frmt_}60'):
+                if fr_note in (frmt_, f"{frmt_}60"):
                     qual_dict[frmt_][fr_id] = fr_size
         if video.get("acodec") != "none":
             bitrrate = int(video.get("abr", 0))

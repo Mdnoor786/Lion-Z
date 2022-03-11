@@ -33,7 +33,7 @@ async def formatJSON(outData):
     msg += f"\n\n**Type** : {jsonData['format']}"
     msg += "\\n**Genres** : "
     for g in jsonData["genres"]:
-        msg += f'{g} '
+        msg += f"{g} "
     msg += f"\n**Status** : {jsonData['status']}"
     msg += f"\n**Episode** : {jsonData['episodes']}"
     msg += f"\n**Year** : {jsonData['startDate']['year']}"
@@ -194,9 +194,9 @@ def getBannerLink(mal, kitsu_search=True):
     }
     """
     data = {"query": query, "variables": {"idMal": int(mal)}}
-    if image := requests.post("https://graphql.anilist.co", json=data).json()[
-        "data"
-    ]["Media"]["bannerImage"]:
+    if image := requests.post("https://graphql.anilist.co", json=data).json()["data"][
+        "Media"
+    ]["bannerImage"]:
         return image
     return getPosterLink(mal)
 
@@ -348,8 +348,7 @@ def is_gif(file):
     # ngl this should be fixed, telethon.utils.is_gif but working
     # lazy to go to github and make an issue kek
     return (
-        DocumentAttributeAnimated()
-        in getattr(file, "document", file).attributes
+        DocumentAttributeAnimated() in getattr(file, "document", file).attributes
         if is_video(file)
         else False
     )

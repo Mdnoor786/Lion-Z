@@ -135,7 +135,9 @@ async def ff_mpeg_trim_cmd(event):
             end_time,
         )
         if o is None:
-            return await edit_delete(lionevent, "**Error : **`Can't complete the process`")
+            return await edit_delete(
+                lionevent, "**Error : **`Can't complete the process`"
+            )
         try:
             c_time = time.time()
             await event.client.send_file(
@@ -158,7 +160,9 @@ async def ff_mpeg_trim_cmd(event):
         cmd, start_time = cmt
         o = await _liontools.take_screen_shot(FF_MPEG_DOWN_LOAD_MEDIA_PATH, start_time)
         if o is None:
-            return await edit_delete(lionevent, "**Error : **`Can't complete the process`")
+            return await edit_delete(
+                lionevent, "**Error : **`Can't complete the process`"
+            )
         try:
             c_time = time.time()
             await event.client.send_file(
@@ -220,7 +224,9 @@ async def ff_mpeg_trim_cmd(event):
             out_put_file_name,
         )
         if o is None:
-            return await edit_delete(lionevent, "**Error : **`Can't complete the process`")
+            return await edit_delete(
+                lionevent, "**Error : **`Can't complete the process`"
+            )
         try:
             c_time = time.time()
             await event.client.send_file(

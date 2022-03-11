@@ -444,7 +444,7 @@ async def _(event):
         ],
     },
 )
-async def useless(event):    # sourcery no-metrics
+async def useless(event):  # sourcery no-metrics
     """Custom profile pics"""
     input_str = event.pattern_match.group(2)
     ext = re.findall(r"-\w+", input_str)
@@ -570,7 +570,7 @@ async def _(event):
         "examples": ["{tr}end autopic"],
     },
 )
-async def _(event):    # sourcery no-metrics
+async def _(event):  # sourcery no-metrics
     "To stop the functions of autoprofile plugin"
     input_str = event.pattern_match.group(1)
     if input_str == "thorpfp" and gvarstatus("autopfp_strings") is not None:
